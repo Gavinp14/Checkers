@@ -1,5 +1,5 @@
 
-class Square{
+export class Square{
     constructor(row, col, color){
         this.row = row;
         this.col = col;
