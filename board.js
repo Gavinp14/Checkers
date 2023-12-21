@@ -12,7 +12,7 @@ class Square{
     }
 }
 
-class Board{
+export class Board{
     constructor(rows, cols, size){
         this.rows = rows;
         this.cols = cols;
@@ -44,6 +44,5 @@ class Board{
     }
 }
 
-const checkersBoard = new Board(8, 8, 75);
-checkersBoard.draw();
+
 
