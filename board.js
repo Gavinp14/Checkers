@@ -1,4 +1,4 @@
-import { Piece } from './piece.js';
+import { Piece } from './piece.js'
 
 export class Square{
     constructor(row, col, color){
@@ -25,6 +25,7 @@ export class Board{
 
     createBoard(){
         const board = [];
+        
         for (let row=0; row < this.rows; row++){
             const currRow = [];
             for (let col=0; col < this.cols; col++){
@@ -33,11 +34,12 @@ export class Board{
             }
             board.push(currRow);
         }
+
         return board;
     }
 
     initializePieces(row, col, radius){
-        const piece = new Piece(row, col, color, radius);
+        const piece = new Piece(row, col, 'white', radius);
         piece.draw(this.ctx, this.size);
         return piece;
 
