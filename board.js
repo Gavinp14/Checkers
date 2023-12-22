@@ -38,9 +38,17 @@ export class Board{
         return board;
     }
 
-    initializePieces(row, col, radius){
-        const piece = new Piece(row, col, 'white', radius);
-        piece.draw(this.ctx, this.size);
+    initializePieces(){
+        const blackPieces = [];
+        const whitePieces = [];
+
+        for (let row=0; row < 2; row++){
+            for (let col=0; col < this.cols; col++){
+                const piece = new Piece(row, col, 'white', 35);
+                whitePieces.push(piece);
+                piece.draw(this.ctx, this.size);
+            }
+        }
         return piece;
 
     }
