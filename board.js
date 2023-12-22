@@ -39,14 +39,28 @@ export class Board{
     }
 
     initializePieces(){
-        const blackPieces = [];
-        const whitePieces = [];
+        const darkPieces = [];
+        const lightPieces = [];
 
-        for (let row=0; row < 2; row++){
+        //draw white pieces
+        for (let row=0; row < 3; row++){
             for (let col=0; col < this.cols; col++){
-                const piece = new Piece(row, col, 'white', 35);
-                whitePieces.push(piece);
-                piece.draw(this.ctx, this.size);
+                if ((row + col) % 2 === 1){
+                    const piece = new Piece(row, col, 'brown', 40);
+                    darkPieces.push(piece);
+                    piece.draw(this.ctx, this.size);
+                }
+            }
+        }
+
+        //draw black pieces
+        for (let row=5; row < this.rows; row++){
+            for (let col=0; col < this.cols; col++){
+                if ((row + col) % 2 === 1){
+                    const piece = new Piece(row, col, 'tan', 40);
+                    lightPieces.push(piece);
+                    piece.draw(this.ctx, this.size);
+                }
             }
         }
         return piece;
